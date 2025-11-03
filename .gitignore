@@ -1,0 +1,77 @@
+/.env
+/.env.example
+
+# ─────────────────────────────
+# 1. Environment & credentials
+# ─────────────────────────────
+.env
+.env.local
+.env.*.backup
+!.env.example          # keep this template version tracked
+
+# ─────────────────────────────
+# 2. Composer dependencies
+# ─────────────────────────────
+/vendor/
+/composer.lock          # optional: remove the leading slash if you want to track it
+
+# ─────────────────────────────
+# 3. Node / NPM build artifacts
+# ─────────────────────────────
+/node_modules/
+/package-lock.json       # optional: commit if you want reproducible builds
+
+# Tailwind + esbuild outputs
+/public/assets/
+/public/assets/*.map
+/public/assets/hot
+/public/mix-manifest.json
+
+# ─────────────────────────────
+# 4. Framework & runtime cache
+# ─────────────────────────────
+/storage/logs/
+/storage/cache/
+/storage/framework/
+/bootstrap/cache/
+/tmp/
+/.cache/
+
+# ─────────────────────────────
+# 5. IDE / OS specific files
+# ─────────────────────────────
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─────────────────────────────
+# 6. Database / backups / misc
+# ─────────────────────────────
+*.sql
+*.sqlite
+*.bak
+*.tmp
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ─────────────────────────────
+# 7. Build/test output
+# ─────────────────────────────
+/coverage/
+/phpunit.xml.cache
+/.phpunit.result.cache
+/tests/_output/
+
+# ─────────────────────────────
+# 8. System-generated assets (Codex phases)
+/docs/generated/
+/reports/
+/public/uploads/
+/public/temp/
+/database/seeds/dumps/
+
+

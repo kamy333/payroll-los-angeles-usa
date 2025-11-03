@@ -1,0 +1,66 @@
+# ─────────────────────────────
+# 1. Text normalization
+# ─────────────────────────────
+# Force consistent LF endings for all text files (prevents ^M issues on Windows)
+* text=auto eol=lf
+
+# ─────────────────────────────
+# 2. Treat these as text files for diffs
+# ─────────────────────────────
+*.php     text diff=php
+*.html    text diff=html
+*.htm     text diff=html
+*.js      text diff=javascript
+*.jsx     text diff=javascript
+*.ts      text diff=javascript
+*.css     text diff=css
+*.scss    text diff=css
+*.json    text diff=json
+*.xml     text diff=xml
+*.yml     text diff=yaml
+*.yaml    text diff=yaml
+*.md      text diff=markdown
+*.sql     text diff=sql
+*.env     text
+*.example text
+*.txt     text
+
+# ─────────────────────────────
+# 3. Treat binary files properly (no diffs)
+# ─────────────────────────────
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.ico     binary
+*.pdf     binary
+*.ttf     binary
+*.woff    binary
+*.woff2   binary
+*.eot     binary
+*.zip     binary
+*.gz      binary
+*.tar     binary
+*.mp3     binary
+*.mp4     binary
+*.mov     binary
+*.svg     text   # SVG is XML, keep as text so diffs show XML changes
+
+# ─────────────────────────────
+# 4. Mark generated directories as non-source
+# ─────────────────────────────
+public/assets/* linguist-generated=true
+node_modules/* linguist-vendored
+vendor/* linguist-vendored
+
+# ─────────────────────────────
+# 5. Documentation formatting
+# ─────────────────────────────
+*.md text diff=markdown
+*.rst text diff=markdown
+
+# ─────────────────────────────
+# 6. Composer and NPM lock files
+# ─────────────────────────────
+composer.lock text eol=lf
+package-lock.json text eol=lf
