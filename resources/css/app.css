@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-surface: 248 248 251;
+        --color-elevated: 255 255 255;
+        --color-foreground: 17 24 39;
+        --color-muted: 107 114 128;
+        --color-border: 229 231 235;
+        --color-primary: 79 70 229;
+        --color-primary-foreground: 255 255 255;
+    }
+
+    [data-theme='dark'] {
+        color-scheme: dark;
+        --color-surface: 17 24 39;
+        --color-elevated: 24 33 55;
+        --color-foreground: 243 244 246;
+        --color-muted: 156 163 175;
+        --color-border: 55 65 81;
+        --color-primary: 129 140 248;
+        --color-primary-foreground: 15 23 42;
+    }
+
+    body {
+        @apply bg-surface text-foreground antialiased;
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+}
+
+@layer components {
+    .nav-link {
+        @apply flex items-center rounded-xl px-3 py-2 text-sm font-medium text-muted transition hover:bg-primary/10 hover:text-foreground focus:outline-none focus-visible:ring;
+    }
+
+    .menu-item {
+        @apply flex w-full items-center gap-2 rounded-md px-3 py-2 text-left text-sm text-foreground hover:bg-primary/10 focus:outline-none focus-visible:ring;
+    }
+}
+
+@layer utilities {
+    .bg-surface {
+        background-color: rgb(var(--color-surface) / <alpha-value>);
+    }
+
+    .bg-elevated {
+        background-color: rgb(var(--color-elevated) / <alpha-value>);
+    }
+
+    .text-foreground {
+        color: rgb(var(--color-foreground) / <alpha-value>);
+    }
+
+    .text-muted {
+        color: rgb(var(--color-muted) / <alpha-value>);
+    }
+
+    .border-border {
+        border-color: rgb(var(--color-border) / <alpha-value>);
+    }
+
+    .bg-primary {
+        background-color: rgb(var(--color-primary) / <alpha-value>);
+    }
+
+    .text-primary {
+        color: rgb(var(--color-primary) / <alpha-value>);
+    }
+
+    .text-primary-foreground {
+        color: rgb(var(--color-primary-foreground) / <alpha-value>);
+    }
+
+    .ring-primary\/10 {
+        --tw-ring-color: rgb(var(--color-primary) / 0.1);
+    }
+
+    .ring-primary\/40 {
+        --tw-ring-color: rgb(var(--color-primary) / 0.4);
+    }
+
+    .shadow-primary\/25 {
+        --tw-shadow-color: rgb(var(--color-primary) / 0.25);
+        --tw-shadow: var(--tw-shadow-colored);
+    }
+}

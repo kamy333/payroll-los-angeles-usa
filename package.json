@@ -1,0 +1,33 @@
+{
+  "name": "payroll-los-angeles-usa",
+  "version": "1.0.0",
+  "description": "Household Payroll Web App front-end tooling (Phase 1)",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:css dev:js",
+    "dev:css": "tailwindcss -i ./resources/css/app.css -o ./public/assets/app.css --watch",
+    "dev:js": "esbuild resources/js/app.js --bundle --outfile=public/assets/app.js --format=esm --sourcemap --watch",
+    "build": "npm-run-all build:css build:js",
+    "build:css": "tailwindcss -i ./resources/css/app.css -o ./public/assets/app.css --minify",
+    "build:js": "esbuild resources/js/app.js --bundle --outfile=public/assets/app.js --format=esm --minify"
+  },
+  "keywords": [
+    "slim",
+    "tailwind",
+    "alpinejs",
+    "payroll"
+  ],
+  "author": "Kamran & Codex",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "alpinejs": "^3.14.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "esbuild": "^0.23.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.13"
+  }
+}
